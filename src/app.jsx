@@ -3,13 +3,11 @@ import React, { useState } from 'react';
 const PricingCalculator = () => {
   const [activeTab, setActiveTab] = useState('single');
   
-  // Single Location State
   const [slScenario, setSlScenario] = useState('new');
   const [slGpv, setSlGpv] = useState('');
   const [slCurrentModel, setSlCurrentModel] = useState('');
   const [slOtherSubFee, setSlOtherSubFee] = useState('');
   
-  // Multi Location State
   const [mlScenario, setMlScenario] = useState('churn');
   const [mlNumLocs, setMlNumLocs] = useState('');
   const [mlAvgGpv, setMlAvgGpv] = useState('');
@@ -384,7 +382,7 @@ const PricingCalculator = () => {
             
             {mlScenario === 'new' ? (
               <div className="space-y-4">
-                <div className={`grid gap-4 ${avgGpv <= 1500 ? 'grid-cols-2' : 'grid-cols-2'}`}>
+                <div className="grid gap-4 grid-cols-2">
                   {[
                     { 
                       name: 'Flex', 
