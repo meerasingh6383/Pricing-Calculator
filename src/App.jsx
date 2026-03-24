@@ -219,8 +219,8 @@ const PricingCalculator = () => {
                   ...(slScenario === 'churn' ? [{ name: 'Super Flex', price: pricing.superFlex, formula: `$99 + 10% × ${formatCurrency(gpv)}`, available: true }] : []),
                   ...(slCurrentModel === 'Other' ? [{ 
                     name: 'Current (Other)', 
-                    price: pricing.other, 
-                    formula: `${formatCurrency(parseFloat(slOtherSubFee) || 0)} + 5% × ${formatCurrency(gpv)}`, 
+                    price: parseFloat(slOtherSubFee) || 0,
+                    formula: formatCurrency(parseFloat(slOtherSubFee) || 0),
                     available: false,
                     isCurrent: true
                   }] : [])
